@@ -5,9 +5,9 @@ import { green } from "kleur/colors";
 import { readFile, writeFile } from "node:fs/promises";
 
 program
-  .name("sarif-strip-suppressed")
-  .version("0.1.0", "-v, --version")
-  .description("Strips suppressed results from SARIF files");
+	.name("sarif-strip-suppressed")
+	.version("0.1.0", "-v, --version")
+	.description("Strips suppressed results from SARIF files");
 
 program.argument("file");
 program.parse();
@@ -18,9 +18,9 @@ const fileContents = await readFile(file, { encoding: "utf-8" });
 const fileData = JSON.parse(fileContents) as { runs: Run[] };
 
 for (const run of fileData.runs) {
-  if (run.results) {
-    run.results = run.results.filter((res) => !res.suppressions);
-  }
+	if (run.results) {
+		run.results = run.results.filter((res) => !res.suppressions);
+	}
 }
 
 await writeFile(file, JSON.stringify(fileData, undefined, 2));
