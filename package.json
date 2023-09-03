@@ -1,6 +1,6 @@
 {
 	"name": "@ryanccn/sarif-strip-suppressed",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"description": "Strips suppressed results from SARIF files",
 	"type": "module",
 	"bin": {
