@@ -19,7 +19,7 @@ const fileData = JSON.parse(fileContents) as { runs: Run[] };
 
 for (const run of fileData.runs) {
 	if (run.results) {
-		run.results = run.results.filter((res) => !res.suppressions);
+		run.results = run.results.filter((res) => !res.suppressions || res.suppressions.length === 0);
 	}
 }
 
